@@ -347,10 +347,6 @@ class _FixerMapViewState extends State<FixerMapView> {
                       ),
                       const SizedBox(height: 24),
 
-<<<<<<< HEAD
-=======
-                      // Date and Time Info Cards
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
                       Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
@@ -388,10 +384,6 @@ class _FixerMapViewState extends State<FixerMapView> {
                       ),
                       const SizedBox(height: 24),
 
-<<<<<<< HEAD
-=======
-                      // Images Section
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
                       if (job.imageUrls.isNotEmpty) ...[
                         const Text(
                           'Job Images',
@@ -440,10 +432,6 @@ class _FixerMapViewState extends State<FixerMapView> {
                   ),
                 ),
               ),
-<<<<<<< HEAD
-=======
-              // Accept/Offer Buttons
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
               if (job.status == 'pending')
                 Row(
                   children: [

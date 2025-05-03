@@ -14,6 +14,7 @@ class EditJobPage extends StatefulWidget {
 }
 
 class _EditJobPageState extends State<EditJobPage> {
+  late TextEditingController _titleController;
   late TextEditingController _descController;
   late TextEditingController _priceController;
   String? selectedCategory;
@@ -27,11 +28,9 @@ class _EditJobPageState extends State<EditJobPage> {
     final job = widget.jobDoc.data() as Map<String, dynamic>;
 
     final price = job['price'];
-    final displayPrice = price != null
-        ? (price is int ? price : (price as num).toInt()).toString()
-        : '--';
     final priceText = (price is num) ? price.toString() : '';
 
+    _titleController = TextEditingController(text: job['title'] ?? '');
     _descController = TextEditingController(text: job['desc'] ?? '');
     _priceController = TextEditingController(text: priceText);
     selectedCategory = job['category'];
@@ -60,6 +59,7 @@ class _EditJobPageState extends State<EditJobPage> {
 
   Future<void> _saveChanges() async {
     await widget.jobDoc.reference.update({
+      'title': _titleController.text,
       'desc': _descController.text,
       'category': selectedCategory,
       'price': double.tryParse(_priceController.text),
@@ -76,6 +76,7 @@ class _EditJobPageState extends State<EditJobPage> {
 
   @override
   void dispose() {
+    _titleController.dispose();
     _descController.dispose();
     _priceController.dispose();
     super.dispose();
@@ -100,6 +101,10 @@ class _EditJobPageState extends State<EditJobPage> {
         padding: const EdgeInsets.all(20),
         child: ListView(
           children: [
+            const Text("Title", style: TextStyle(fontWeight: FontWeight.bold)),
+            TextField(controller: _titleController),
+
+            const SizedBox(height: 16),
             const Text("Description", style: TextStyle(fontWeight: FontWeight.bold)),
             TextField(controller: _descController),
 

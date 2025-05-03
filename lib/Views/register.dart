@@ -167,10 +167,6 @@ class _CustomRegisterScreenState extends State<CustomRegisterScreen> {
                 ),
                 const SizedBox(height: 24),
 
-<<<<<<< HEAD
-=======
-                // Register Button
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -187,10 +183,6 @@ class _CustomRegisterScreenState extends State<CustomRegisterScreen> {
                 ),
                 const SizedBox(height: 24),
 
-<<<<<<< HEAD
-=======
-                // Sign In Option
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
                 Center(
                   child: TextButton(
                     onPressed: () => Navigator.pop(context),

@@ -10,10 +10,7 @@ class TimeOfDayRange {
 
 class Job {
   final String? id;
-<<<<<<< HEAD
   final String title;
-=======
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
   final String desc;
   final int price;
   final DateTimeRange jobDateRange;
@@ -28,10 +25,7 @@ class Job {
 
   Job({
     this.id,
-<<<<<<< HEAD
     required this.title,
-=======
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
     required this.desc,
     required this.price,
     required this.jobDateRange,
@@ -48,10 +42,7 @@ class Job {
   Map<String, dynamic> toMap() {
     return {
       'desc': desc,
-<<<<<<< HEAD
       'title': title,
-=======
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
       'price': price,
       'startDate': Timestamp.fromDate(jobDateRange.start),
       'endDate': Timestamp.fromDate(jobDateRange.end),
@@ -77,7 +68,6 @@ class Job {
     final data = doc.data() as Map<String, dynamic>;
 
     return Job(
-<<<<<<< HEAD
       id: doc.id,
       desc: data['desc'] ?? '',
       price: (data['price'] is int)
@@ -86,15 +76,6 @@ class Job {
       jobDateRange: DateTimeRange(
         start: (data['startDate'] as Timestamp?)?.toDate() ?? DateTime.now(),
         end: (data['endDate'] as Timestamp?)?.toDate() ?? DateTime.now().add(const Duration(days: 1)),
-=======
-      id: doc.id, 
-      desc: data['desc'] ?? '',
-      price: data['price'] ?? 0,
-      jobDateRange: DateTimeRange(
-        start: (data['startDate'] as Timestamp?)?.toDate() ?? DateTime.now(),
-        end: (data['endDate'] as Timestamp?)?.toDate() ??
-            DateTime.now().add(Duration(days: 1)),
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
       ),
       dailyTimeRange: TimeOfDayRange(
         start: TimeOfDay(
@@ -111,24 +92,15 @@ class Job {
       status: data['status'] ?? 'pending',
       latitude: data['latitude']?.toDouble() ?? 0.0,
       longitude: data['longitude']?.toDouble() ?? 0.0,
-<<<<<<< HEAD
       ownerId: data['ownerId'] ?? '',
       assignedFixerId: data['assignedFixerId'],
       title: data['title']??'',
-=======
-      ownerId:
-          data['ownerId'] ?? '', 
-      assignedFixerId: data['assignedFixerId'],
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
     );
   }
 
   Job copyWith({
     String? id,
-<<<<<<< HEAD
     String? title,
-=======
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
     String? desc,
     int? price,
     DateTimeRange? jobDateRange,
@@ -143,10 +115,7 @@ class Job {
   }) {
     return Job(
       id: id ?? this.id,
-<<<<<<< HEAD
       title: title ?? this.title,
-=======
->>>>>>> b6204569c36ca6ddad69002b8753ca10b451a41f
       desc: desc ?? this.desc,
       price: price ?? this.price,
       jobDateRange: jobDateRange ?? this.jobDateRange,
